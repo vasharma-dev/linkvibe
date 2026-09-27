@@ -117,21 +117,21 @@ END:VCALENDAR`;
   return (
     <div className="w-full">
       {/* Interactive View State Bar */}
-      <div className="w-full bg-[#f2f3ff] px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3 border-b border-[#c7c4d8]/40">
-        <div className="flex items-center gap-3 min-w-0">
+      <div className="w-full bg-[#f2f3ff] px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 border-b border-[#c7c4d8]/40">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-wrap">
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#acedff] text-[#004e5c] text-xs font-bold uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-[#00687a] animate-pulse"></span>
             Attendee Perspective
           </div>
           <div className="h-4 w-px bg-[#c7c4d8]/60 hidden sm:block"></div>
-          <p className="text-xs text-[#464555] truncate font-medium">
+          <p className="text-[11px] sm:text-xs text-[#464555] font-medium">
             Live Checkout Experience &amp; Smart Digital Pass Preview
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 shrink-0">
-          <span className="text-xs text-[#464555] font-semibold">Ticket Stage:</span>
-          <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs font-bold">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap w-full sm:w-auto justify-between sm:justify-end">
+          <span className="text-[11px] sm:text-xs text-[#464555] font-semibold">Stage:</span>
+          <span className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-0.5 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs font-bold">
             <span className="material-symbols-outlined text-[14px]">lock</span>
             Tier 1 VIP Reserved
           </span>
@@ -142,13 +142,13 @@ END:VCALENDAR`;
       </div>
 
       {/* Main Content Container */}
-      <div className="w-full px-4 lg:px-8 py-6 space-y-6 max-w-7xl mx-auto">
+      <div className="w-full px-3 sm:px-4 lg:px-8 py-4 sm:py-6 space-y-5 sm:space-y-6 max-w-7xl mx-auto">
         {/* Event Banner Spotlight */}
-        <div className="relative overflow-hidden rounded-2xl bg-white p-6 lg:p-8 shadow-sm border border-[#c7c4d8]/40">
+        <div className="relative overflow-hidden rounded-2xl bg-white p-4 sm:p-6 lg:p-8 shadow-sm border border-[#c7c4d8]/40">
           <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-gradient-to-br from-[#c3c0ff]/40 to-[#acedff]/30 blur-3xl pointer-events-none"></div>
           <div className="absolute -left-20 -bottom-20 w-72 h-72 rounded-full bg-gradient-to-tr from-[#dae2fd]/50 to-[#3525cd]/10 blur-2xl pointer-events-none"></div>
 
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-6">
             <div className="space-y-2 max-w-3xl">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs font-bold uppercase tracking-wider">
@@ -160,7 +160,7 @@ END:VCALENDAR`;
                 </span>
               </div>
 
-              <h1 className="text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
                 {event.title}
               </h1>
 
@@ -216,7 +216,7 @@ END:VCALENDAR`;
           {/* LEFT COLUMN: Booking & Badge Customization Form (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Step 1: Attendee Info */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -230,7 +230,7 @@ END:VCALENDAR`;
                   className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eaedff] text-[#3525cd] text-xs font-bold hover:bg-[#e2dfff] transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">sync</span>
-                  Autofill from LinkedIn
+                  <span className="hidden xs:inline">Autofill from</span> LinkedIn
                 </button>
               </div>
 
@@ -282,14 +282,15 @@ END:VCALENDAR`;
                 <div className="md:col-span-2 space-y-1">
                   <label className="text-xs font-semibold text-[#464555]">LinkedIn Profile URL</label>
                   <div className="relative flex items-center">
-                    <span className="absolute left-3 text-xs text-[#777587] font-mono">
+                    <span className="absolute left-3 text-xs text-[#777587] font-mono hidden sm:inline">
                       linkedin.com/in/
                     </span>
                     <input
                       type="text"
                       value={attendee.linkedinUrl}
                       onChange={(e) => onUpdateAttendee({ linkedinUrl: e.target.value })}
-                      className="w-full pl-32 pr-3.5 py-2.5 rounded-lg bg-[#f2f3ff] text-xs font-mono text-[#131b2e] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3525cd]/30 border border-[#c7c4d8]/40"
+                      placeholder="username or URL"
+                      className="w-full pl-3.5 sm:pl-32 pr-3.5 py-2.5 rounded-lg bg-[#f2f3ff] text-xs font-mono text-[#131b2e] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3525cd]/30 border border-[#c7c4d8]/40"
                     />
                   </div>
                 </div>
@@ -297,7 +298,7 @@ END:VCALENDAR`;
             </div>
 
             {/* Step 2: Custom Badge Photo Upload */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -365,7 +366,7 @@ END:VCALENDAR`;
             </div>
 
             {/* Step 3: Ticket Type Selection */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -383,7 +384,7 @@ END:VCALENDAR`;
                     <label
                       key={tier.id}
                       onClick={() => onUpdateAttendee({ tierId: tier.id })}
-                      className={`flex items-start justify-between p-4 rounded-xl cursor-pointer transition-all relative overflow-hidden ${
+                      className={`flex items-start justify-between p-3.5 sm:p-4 rounded-xl cursor-pointer transition-all relative overflow-hidden ${
                         isSelected
                           ? 'bg-[#e2dfff]/30 border-2 border-[#3525cd] shadow-xs'
                           : 'bg-[#f2f3ff] hover:bg-[#eaedff] border border-[#c7c4d8]/40'
@@ -392,7 +393,7 @@ END:VCALENDAR`;
                       {isSelected && (
                         <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-[#3525cd]"></div>
                       )}
-                      <div className="flex items-start gap-3 pl-1">
+                      <div className="flex items-start gap-2.5 sm:gap-3 pl-1">
                         <input
                           type="radio"
                           name="ticket-tier"
@@ -401,9 +402,9 @@ END:VCALENDAR`;
                           className="mt-1 h-4 w-4 text-[#3525cd] focus:ring-[#3525cd]"
                         />
                         <div className="space-y-1">
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 flex-wrap">
                             <p
-                              className={`text-sm font-bold ${
+                              className={`text-xs sm:text-sm font-bold ${
                                 isSelected ? 'text-[#3525cd]' : 'text-[#131b2e]'
                               }`}
                             >
@@ -428,7 +429,7 @@ END:VCALENDAR`;
                               {tier.features.map((feat, idx) => (
                                 <span
                                   key={idx}
-                                  className="px-2 py-0.5 rounded bg-white text-[11px] font-semibold text-[#3525cd] border border-[#c7c4d8]/30"
+                                  className="px-2 py-0.5 rounded bg-white text-[10px] sm:text-[11px] font-semibold text-[#3525cd] border border-[#c7c4d8]/30"
                                 >
                                   {feat}
                                 </span>
@@ -438,9 +439,9 @@ END:VCALENDAR`;
                         </div>
                       </div>
 
-                      <div className="text-right shrink-0 pl-3">
+                      <div className="text-right shrink-0 pl-2 sm:pl-3">
                         <span
-                          className={`text-lg font-black ${
+                          className={`text-base sm:text-lg font-black ${
                             isSelected ? 'text-[#3525cd]' : 'text-[#131b2e]'
                           }`}
                         >
@@ -455,7 +456,7 @@ END:VCALENDAR`;
             </div>
 
             {/* Step 4: Networking & Matchmaking Match tags */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center gap-2 pb-2 border-b border-[#eaedff]">
                 <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
                   4
@@ -525,12 +526,12 @@ END:VCALENDAR`;
               <button
                 type="button"
                 onClick={() => onShowBookingSuccess(selectedTier)}
-                className="w-full py-4 px-6 rounded-2xl bg-[#3525cd] hover:bg-[#4f46e5] text-white text-base font-bold shadow-xl shadow-[#3525cd]/30 transition-all flex items-center justify-center gap-2 transform active:scale-99 cursor-pointer"
+                className="w-full py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl bg-[#3525cd] hover:bg-[#4f46e5] text-white text-sm sm:text-base font-bold shadow-xl shadow-[#3525cd]/30 transition-all flex items-center justify-center gap-2 transform active:scale-99 cursor-pointer"
               >
-                <span className="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+                <span className="material-symbols-outlined text-[20px] sm:text-[24px]">qr_code_scanner</span>
                 <span>Complete Booking &amp; Generate QR Pass (${selectedTier.price})</span>
               </button>
-              <p className="text-center text-xs text-[#464555] flex items-center justify-center gap-1.5">
+              <p className="text-center text-xs text-[#464555] flex items-center justify-center gap-1.5 flex-wrap">
                 <span className="material-symbols-outlined text-[16px] text-[#00687a]">security</span>
                 <span>Encrypted 256-bit checkout • Instant Apple &amp; Google Wallet Pass sync</span>
               </p>
@@ -787,7 +788,7 @@ END:VCALENDAR`;
         </div>
 
         {/* Venue & Entry Logistics Section */}
-        <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+        <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-base font-bold text-[#131b2e]">Venue &amp; Entry Logistics</h2>
@@ -795,7 +796,7 @@ END:VCALENDAR`;
                 Javits Center • Hall E entrance on 11th Ave • Dedicated LinkVibe VIP check-in turnstiles
               </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="px-3 py-1 rounded-full bg-[#acedff] text-[#004e5c] text-xs font-bold flex items-center gap-1">
                 <span className="material-symbols-outlined text-[16px]">near_me</span>
                 Transit Verified
@@ -814,16 +815,16 @@ END:VCALENDAR`;
 
           {/* Static Map Container with Verified NYC Location & Active Ping */}
           <div
-            className="w-full h-64 rounded-xl overflow-hidden shadow-inner relative bg-cover bg-center border border-[#c7c4d8]/40"
+            className="w-full h-48 sm:h-64 rounded-xl overflow-hidden shadow-inner relative bg-cover bg-center border border-[#c7c4d8]/40"
             style={{ backgroundImage: `url('${ASSETS.mapImage}')` }}
           >
             <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
-            <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-2.5 text-[#131b2e] border border-[#c7c4d8]/40">
-              <span className="relative flex h-3 w-3">
+            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl shadow-lg flex items-center gap-2 text-[#131b2e] border border-[#c7c4d8]/40 max-w-[90%]">
+              <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3525cd] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#3525cd]"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-[#3525cd]"></span>
               </span>
-              <span className="text-xs font-bold">Registration Gate A • 11th Ave &amp; 36th St</span>
+              <span className="text-[11px] sm:text-xs font-bold truncate">Registration Gate A • 11th Ave &amp; 36th St</span>
             </div>
           </div>
         </div>

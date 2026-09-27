@@ -131,21 +131,21 @@ END:VCALENDAR`;
   return (
     <div className="w-full">
       {/* Top Status & Controls Bar */}
-      <div className="w-full bg-[#f2f3ff] px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3 border-b border-[#c7c4d8]/40">
-        <div className="flex items-center gap-2.5">
+      <div className="w-full bg-[#f2f3ff] px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 border-b border-[#c7c4d8]/40">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="w-2.5 h-2.5 rounded-full bg-[#3525cd] animate-pulse"></span>
           <span className="text-xs font-bold text-[#3525cd]">
             Step 1 of 2: Event Details &amp; Presence
           </span>
           <span className="text-[#777587] text-xs">·</span>
-          <span className="text-xs text-[#464555]">Auto-saved 2s ago</span>
+          <span className="text-[11px] sm:text-xs text-[#464555]">Auto-saved 2s ago</span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap w-full sm:w-auto justify-between sm:justify-end">
           <button
             type="button"
             onClick={onPublishToLinkedIn}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-bold shadow-xs transition-all cursor-pointer transform active:scale-98"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-bold shadow-xs transition-all cursor-pointer transform active:scale-98"
           >
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 1 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37h2.78z" />
@@ -153,7 +153,7 @@ END:VCALENDAR`;
             <span>Share to LinkedIn</span>
           </button>
 
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs font-semibold">
+          <div className="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs font-semibold">
             <span className="w-2 h-2 rounded-full bg-[#00687a] animate-pulse"></span>
             <span>Live Preview Sync</span>
           </div>
@@ -162,7 +162,7 @@ END:VCALENDAR`;
             <button
               onClick={() => setShowPresets(!showPresets)}
               type="button"
-              className="flex items-center gap-1 px-3 py-1 rounded-lg bg-white border border-[#c7c4d8]/60 hover:bg-[#f2f3ff] text-xs font-semibold text-[#131b2e] transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-lg bg-white border border-[#c7c4d8]/60 hover:bg-[#f2f3ff] text-xs font-semibold text-[#131b2e] transition-colors cursor-pointer"
             >
               <span className="material-symbols-outlined text-[15px]">tune</span>
               <span>Presets</span>
@@ -193,13 +193,13 @@ END:VCALENDAR`;
       </div>
 
       {/* Main Workspace Grid (7 cols Left Form, 5 cols Right Live Preview) */}
-      <div className="w-full px-4 lg:px-8 py-6 max-w-7xl mx-auto space-y-6">
+      <div className="w-full px-3 sm:px-4 lg:px-8 py-4 sm:py-6 max-w-7xl mx-auto space-y-5 sm:space-y-6">
         {/* Header Title Section */}
         <div>
-          <h1 className="text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
             Create Event &amp; Gather Hype
           </h1>
-          <p className="text-sm text-[#464555] mt-1 max-w-3xl">
+          <p className="text-xs sm:text-sm text-[#464555] mt-1 max-w-3xl">
             Set up your LinkedIn event details. We'll synchronize real-time location and generate viral
             hook-ready post drafts in Step 2.
           </p>
@@ -209,7 +209,7 @@ END:VCALENDAR`;
           {/* LEFT COLUMN: Event Configuration Form (7 Columns) */}
           <div className="lg:col-span-7 space-y-6">
             {/* 1. Event Basic Info */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -265,7 +265,7 @@ END:VCALENDAR`;
             </div>
 
             {/* 2. Date & Time Schedule */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -330,7 +330,7 @@ END:VCALENDAR`;
             </div>
 
             {/* 3. Venue & Google Places Integration */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -395,7 +395,7 @@ END:VCALENDAR`;
             </div>
 
             {/* 4. Tags & Topic Categories */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -468,7 +468,7 @@ END:VCALENDAR`;
             </div>
 
             {/* 5. Trending LinkedIn Hashtags */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -533,7 +533,7 @@ END:VCALENDAR`;
             </div>
 
             {/* 6. Social & External Registration Links */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-1 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#e2dfff] text-[#3323cc] text-xs flex items-center justify-center font-bold">
@@ -606,8 +606,8 @@ END:VCALENDAR`;
             </div>
 
             {/* Bottom Actions Row */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+              <div className="flex items-center gap-2.5 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={() => {
@@ -618,7 +618,7 @@ END:VCALENDAR`;
                     });
                     onShowToast('Cleared form fields');
                   }}
-                  className="px-4 py-2.5 rounded-lg border border-[#c7c4d8]/60 bg-white hover:bg-[#f2f3ff] text-xs font-bold text-[#464555] hover:text-[#131b2e] transition-colors flex items-center gap-1 cursor-pointer"
+                  className="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl border border-[#c7c4d8]/60 bg-white hover:bg-[#f2f3ff] text-xs font-bold text-[#464555] hover:text-[#131b2e] transition-colors flex items-center justify-center gap-1 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">clear_all</span>
                   Clear All
@@ -626,20 +626,20 @@ END:VCALENDAR`;
                 <button
                   type="button"
                   onClick={() => onShowToast('Draft saved successfully!')}
-                  className="px-4 py-2.5 rounded-lg border border-[#c7c4d8]/60 bg-white hover:bg-[#f2f3ff] text-xs font-bold text-[#131b2e] transition-colors flex items-center gap-1 cursor-pointer shadow-2xs"
+                  className="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl border border-[#c7c4d8]/60 bg-white hover:bg-[#f2f3ff] text-xs font-bold text-[#131b2e] transition-colors flex items-center justify-center gap-1 cursor-pointer shadow-2xs"
                 >
                   <span className="material-symbols-outlined text-[16px]">bookmark</span>
                   Save as Draft
                 </button>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={onPublishToLinkedIn}
-                  className="px-5 py-3 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-bold shadow-md shadow-[#0a66c2]/25 flex items-center gap-2 transition-all cursor-pointer transform active:scale-98"
+                  className="w-full sm:w-auto px-4 sm:px-5 py-3 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#0a66c2]/25 flex items-center justify-center gap-2 transition-all cursor-pointer transform active:scale-98"
                 >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 1 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37h2.78z" />
                   </svg>
                   <span>Publish to LinkedIn</span>
@@ -649,11 +649,11 @@ END:VCALENDAR`;
                 <button
                   type="button"
                   onClick={onProceedToStep2}
-                  className="px-6 py-3 rounded-xl bg-[#3525cd] hover:bg-[#4f46e5] text-white text-xs font-bold shadow-md shadow-[#3525cd]/25 flex items-center gap-2 transition-all cursor-pointer transform active:scale-98"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-[#3525cd] hover:bg-[#4f46e5] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#3525cd]/25 flex items-center justify-center gap-2 transition-all cursor-pointer transform active:scale-98"
                 >
-                  <span>Proceed to Post Builder (Step 2)</span>
+                  <span>Proceed to Post Builder</span>
                   <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  <span className="text-[10px] bg-white/20 px-1 rounded">↵</span>
+                  <span className="hidden sm:inline text-[10px] bg-white/20 px-1 rounded">↵</span>
                 </button>
               </div>
             </div>

@@ -62,40 +62,40 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   return (
     <div className="w-full">
       {/* Sub-bar */}
-      <div className="w-full bg-[#f2f3ff] px-4 lg:px-8 py-3 flex items-center justify-between border-b border-[#c7c4d8]/40">
-        <div className="flex items-center gap-2">
+      <div className="w-full bg-[#f2f3ff] px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 border-b border-[#c7c4d8]/40">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="w-2.5 h-2.5 rounded-full bg-[#00687a] animate-pulse"></span>
           <span className="text-xs font-bold text-[#131b2e]">
             Live Event Intelligence &amp; RSVP Funnel Analytics
           </span>
           <span className="text-[#777587] text-xs">·</span>
-          <span className="text-xs text-[#464555]">Updated 1m ago</span>
+          <span className="text-[11px] sm:text-xs text-[#464555]">Updated 1m ago</span>
         </div>
         <button
           onClick={() => onShowToast('Exported complete attendee report (CSV)!')}
-          className="px-3 py-1 rounded-lg bg-white border border-[#c7c4d8]/60 hover:bg-[#eaedff] text-xs font-bold text-[#3525cd] flex items-center gap-1 transition-colors cursor-pointer"
+          className="w-full sm:w-auto px-3.5 py-1.5 rounded-lg bg-white border border-[#c7c4d8]/60 hover:bg-[#eaedff] text-xs font-bold text-[#3525cd] flex items-center justify-center gap-1 transition-colors cursor-pointer"
         >
           <span className="material-symbols-outlined text-[15px]">download</span>
           Export Full Report
         </button>
       </div>
 
-      <div className="w-full px-4 lg:px-8 py-6 space-y-6 max-w-7xl mx-auto">
+      <div className="w-full px-3 sm:px-4 lg:px-8 py-4 sm:py-6 space-y-5 sm:space-y-6 max-w-7xl mx-auto">
         <div>
-          <h1 className="text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
             Event Growth &amp; Audience Telemetry
           </h1>
-          <p className="text-sm text-[#464555] mt-1">
+          <p className="text-xs sm:text-sm text-[#464555] mt-1">
             Real-time synchronization with LinkedIn Event API, Luma webhooks, and on-site RFID kiosk counters.
           </p>
         </div>
 
         {/* 4 Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {metrics.map((m, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-white border border-[#c7c4d8]/40 shadow-xs space-y-2 hover:border-[#3525cd]/40 transition-all"
+              className="p-4 sm:p-5 rounded-2xl bg-white border border-[#c7c4d8]/40 shadow-xs space-y-2 hover:border-[#3525cd]/40 transition-all"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-[#777587]">{m.label}</span>
@@ -126,38 +126,38 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         </div>
 
         {/* Two Column Visual Charts */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Daily Velocity Chart (7 cols) */}
-          <div className="lg:col-span-7 rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-5">
-            <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
+          <div className="lg:col-span-7 rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#eaedff]">
               <div>
-                <h3 className="text-base font-bold text-[#131b2e]">Daily RSVP Velocity</h3>
+                <h3 className="text-sm sm:text-base font-bold text-[#131b2e]">Daily RSVP Velocity</h3>
                 <p className="text-xs text-[#777587]">Registrations logged per 24h cycle</p>
               </div>
-              <span className="text-xs font-bold text-[#3525cd] bg-[#e2dfff] px-3 py-1 rounded-full">
+              <span className="text-xs font-bold text-[#3525cd] bg-[#e2dfff] px-3 py-1 rounded-full self-start sm:self-auto">
                 Peak: Thursday (+88)
               </span>
             </div>
 
             {/* Bar Visualizer */}
-            <div className="h-56 flex items-end justify-between gap-3 pt-6 px-2">
+            <div className="h-56 flex items-end justify-between gap-2 sm:gap-3 pt-6 px-1 sm:px-2">
               {dailyVelocity.map((item) => (
                 <div key={item.day} className="flex-1 flex flex-col items-center gap-2 group">
-                  <div className="text-[11px] font-mono font-bold text-[#777587] group-hover:text-[#3525cd]">
+                  <div className="text-[10px] sm:text-[11px] font-mono font-bold text-[#777587] group-hover:text-[#3525cd]">
                     {item.count}
                   </div>
                   <div
                     className="w-full bg-[#e2dfff] group-hover:bg-[#3525cd] rounded-t-lg transition-all"
                     style={{ height: item.height }}
                   ></div>
-                  <span className="text-xs font-semibold text-[#464555]">{item.day}</span>
+                  <span className="text-[11px] sm:text-xs font-semibold text-[#464555]">{item.day}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Attendee Role & Demographic Breakdown (5 cols) */}
-          <div className="lg:col-span-5 rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+          <div className="lg:col-span-5 rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
             <div className="pb-2 border-b border-[#eaedff]">
               <h3 className="text-base font-bold text-[#131b2e]">Attendee Demographics</h3>
               <p className="text-xs text-[#777587]">Verified LinkedIn seniority &amp; roles</p>

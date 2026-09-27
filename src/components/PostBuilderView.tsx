@@ -80,35 +80,35 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
   return (
     <div className="w-full">
       {/* Top Status Sub-bar */}
-      <div className="w-full bg-[#f2f3ff] px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3 border-b border-[#c7c4d8]/40">
-        <div className="flex items-center gap-2.5">
+      <div className="w-full bg-[#f2f3ff] px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 border-b border-[#c7c4d8]/40">
+        <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={onBackToStep1}
             className="flex items-center gap-1 text-xs font-bold text-[#3525cd] hover:underline cursor-pointer"
           >
             <span className="material-symbols-outlined text-[15px]">arrow_back</span>
-            Back to Step 1 (Event Details)
+            Back to Step 1
           </button>
           <span className="text-[#777587] text-xs">·</span>
           <span className="text-xs font-bold text-[#131b2e]">
-            Step 2 of 2: Viral Post Builder &amp; AI Hook Engine
+            Step 2 of 2: Viral Post Builder &amp; AI Hook
           </span>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-[#00687a] bg-[#acedff] px-3 py-1 rounded-full flex items-center gap-1">
+          <span className="text-[11px] sm:text-xs font-bold text-[#00687a] bg-[#acedff] px-3 py-1 rounded-full flex items-center gap-1">
             <span className="material-symbols-outlined text-[15px]">trending_up</span>
-            Predicted Reach: +42,000 Impressions
+            Predicted: +42k Reach
           </span>
         </div>
       </div>
 
-      <div className="w-full px-4 lg:px-8 py-6 space-y-6 max-w-7xl mx-auto">
+      <div className="w-full px-3 sm:px-4 lg:px-8 py-4 sm:py-6 space-y-5 sm:space-y-6 max-w-7xl mx-auto">
         <div>
-          <h1 className="text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#131b2e] tracking-tight">
             Viral Post Builder &amp; AI Hook
           </h1>
-          <p className="text-sm text-[#464555] mt-1 max-w-3xl">
+          <p className="text-xs sm:text-sm text-[#464555] mt-1 max-w-3xl">
             Trained on 10,000+ top-performing LinkedIn event announcements. Select an algorithmic hook, tune your voice, and schedule directly.
           </p>
         </div>
@@ -117,7 +117,7 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
           {/* Left Column: Post Editor & AI Hook Selector (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Hook Selector */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-[#3525cd] text-[20px]">psychology</span>
@@ -133,7 +133,7 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                     <div
                       key={hook.id}
                       onClick={() => handleApplyHook(hook.id as any)}
-                      className={`p-4 rounded-xl cursor-pointer transition-all border ${
+                      className={`p-3.5 sm:p-4 rounded-xl cursor-pointer transition-all border ${
                         isSelected
                           ? 'bg-[#e2dfff]/20 border-[#3525cd] shadow-xs'
                           : 'bg-[#f2f3ff] hover:bg-[#eaedff] border-[#c7c4d8]/40'
@@ -160,15 +160,15 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
             </div>
 
             {/* Tone Selector & Editor */}
-            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
-              <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-[#c7c4d8]/40 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-2 border-b border-[#eaedff]">
                 <h2 className="text-base font-bold text-[#131b2e]">Post Content &amp; Formatting</h2>
-                <div className="flex items-center gap-1 bg-[#f2f3ff] p-1 rounded-lg border border-[#c7c4d8]/40">
+                <div className="grid grid-cols-3 sm:flex items-center gap-1 bg-[#f2f3ff] p-1 rounded-xl border border-[#c7c4d8]/40 w-full sm:w-auto">
                   <button
                     onClick={() => setTone('thought-leader')}
-                    className={`px-2.5 py-1 rounded text-xs font-semibold cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg text-[11px] sm:text-xs font-semibold cursor-pointer text-center ${
                       tone === 'thought-leader'
-                        ? 'bg-white text-[#3525cd] shadow-xs'
+                        ? 'bg-white text-[#3525cd] shadow-xs font-bold'
                         : 'text-[#464555]'
                     }`}
                   >
@@ -176,9 +176,9 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                   </button>
                   <button
                     onClick={() => setTone('high-energy')}
-                    className={`px-2.5 py-1 rounded text-xs font-semibold cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg text-[11px] sm:text-xs font-semibold cursor-pointer text-center ${
                       tone === 'high-energy'
-                        ? 'bg-white text-[#3525cd] shadow-xs'
+                        ? 'bg-white text-[#3525cd] shadow-xs font-bold'
                         : 'text-[#464555]'
                     }`}
                   >
@@ -186,9 +186,9 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                   </button>
                   <button
                     onClick={() => setTone('founder')}
-                    className={`px-2.5 py-1 rounded text-xs font-semibold cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg text-[11px] sm:text-xs font-semibold cursor-pointer text-center ${
                       tone === 'founder'
-                        ? 'bg-white text-[#3525cd] shadow-xs'
+                        ? 'bg-white text-[#3525cd] shadow-xs font-bold'
                         : 'text-[#464555]'
                     }`}
                   >
@@ -202,19 +202,19 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                   rows={14}
                   value={postContent}
                   onChange={(e) => setPostContent(e.target.value)}
-                  className="w-full p-4 rounded-xl bg-[#f2f3ff] text-xs font-mono text-[#131b2e] leading-relaxed focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3525cd]/30 border border-[#c7c4d8]/40 resize-y"
+                  className="w-full p-3.5 sm:p-4 rounded-xl bg-[#f2f3ff] text-xs font-mono text-[#131b2e] leading-relaxed focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3525cd]/30 border border-[#c7c4d8]/40 resize-y"
                 ></textarea>
-                <div className="flex items-center justify-between text-[11px] text-[#777587] pt-1">
-                  <span>Formatting: UTF-8 Unicode Bold &amp; Arrows enabled</span>
-                  <span>{postContent.length} characters • 2.5 min read</span>
+                <div className="flex flex-wrap items-center justify-between text-[11px] text-[#777587] pt-1 gap-1">
+                  <span>Unicode Bold &amp; Arrows enabled</span>
+                  <span>{postContent.length} chars • 2.5 min read</span>
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2">
                 <button
                   type="button"
                   onClick={handleCopyPost}
-                  className="px-4 py-2 rounded-xl bg-[#f2f3ff] hover:bg-[#eaedff] text-xs font-bold text-[#131b2e] border border-[#c7c4d8]/40 flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2.5 sm:py-2 rounded-xl bg-[#f2f3ff] hover:bg-[#eaedff] text-xs font-bold text-[#131b2e] border border-[#c7c4d8]/40 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px] text-[#3525cd]">
                     content_copy
@@ -227,9 +227,9 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleSchedulePost}
-                  className="px-5 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-bold shadow-md shadow-[#0a66c2]/25 flex items-center gap-2 transition-all cursor-pointer transform active:scale-98"
+                  className="w-full sm:w-auto px-5 py-2.5 sm:py-2 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-bold shadow-md shadow-[#0a66c2]/25 flex items-center justify-center gap-2 transition-all cursor-pointer transform active:scale-98"
                 >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 1 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37h2.78z" />
                   </svg>
                   <span>Publish to LinkedIn Now</span>
@@ -240,7 +240,7 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                   href={createEventUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-[#f2f3ff] hover:bg-[#eaedff] text-xs font-bold text-[#464555] hover:text-[#131b2e] border border-[#c7c4d8]/40 flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2.5 sm:py-2 rounded-xl bg-[#f2f3ff] hover:bg-[#eaedff] text-xs font-bold text-[#464555] hover:text-[#131b2e] border border-[#c7c4d8]/40 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px] text-[#00687a]">
                     event
@@ -249,9 +249,9 @@ export const PostBuilderView: React.FC<PostBuilderViewProps> = ({
                 </a>
 
                 {published && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#e6f4ea] text-[#137333] text-xs font-bold animate-in fade-in duration-300">
+                  <span className="inline-flex items-center justify-center gap-1 px-3 py-1 rounded-full bg-[#e6f4ea] text-[#137333] text-xs font-bold animate-in fade-in duration-300">
                     <span className="material-symbols-outlined text-[15px]">check_circle</span>
-                    Published to LinkedIn!
+                    Published!
                   </span>
                 )}
               </div>

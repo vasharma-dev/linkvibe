@@ -76,8 +76,8 @@ export default function App() {
         onPublishToLinkedIn={() => setShowLinkedInModal(true)}
       />
 
-      {/* Main View Area with Top Padding for Fixed Header */}
-      <main className="flex-1 w-full pt-16 bg-[#faf8ff]">
+      {/* Main View Area with Top Padding for Fixed Header (two rows on mobile, one on desktop) */}
+      <main className="flex-1 w-full pt-[104px] lg:pt-16 bg-[#faf8ff]">
         {activeTab === 'post-builder' ? (
           <PostBuilderView
             event={event}
@@ -134,8 +134,8 @@ export default function App() {
       />
 
       {/* Footer */}
-      <footer className="w-full bg-white border-t border-[#c7c4d8]/40 py-8 mt-12">
-        <div className="w-full px-4 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="w-full bg-white border-t border-[#c7c4d8]/40 py-6 sm:py-8 mt-8 sm:mt-12">
+        <div className="w-full px-4 lg:px-8 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2.5">
             <div className="w-5 h-5 rounded overflow-hidden shrink-0">
               <img
@@ -149,7 +149,7 @@ export default function App() {
             </span>
           </div>
 
-          <div className="flex items-center gap-6 text-xs font-semibold text-[#464555]">
+          <div className="flex items-center justify-center gap-4 sm:gap-6 text-xs font-semibold text-[#464555] flex-wrap">
             <a href="#community" className="hover:text-[#131b2e] transition-colors">
               Community Guidelines
             </a>

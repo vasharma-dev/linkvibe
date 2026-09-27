@@ -31,11 +31,11 @@ export const Modals: React.FC<ModalsProps> = ({
     <>
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#131b2e] text-white text-xs font-semibold shadow-2xl border border-white/10 animate-bounce duration-300">
+        <div className="fixed bottom-4 sm:bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-50 flex items-center justify-center sm:justify-start gap-2.5 px-4 py-3 rounded-xl bg-[#131b2e] text-white text-xs font-semibold shadow-2xl border border-white/10 animate-bounce duration-300 max-w-md mx-auto sm:mx-0">
           <span className="material-symbols-outlined text-[#57dffe] text-[18px]">
             check_circle
           </span>
-          <span>{toastMessage}</span>
+          <span className="truncate">{toastMessage}</span>
         </div>
       )}
 
@@ -49,8 +49,8 @@ export const Modals: React.FC<ModalsProps> = ({
 
       {/* Event QR Code Modal */}
       {showQRModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-[#c7c4d8]/40 space-y-4 text-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-xs">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-4 sm:p-6 shadow-2xl border border-[#c7c4d8]/40 space-y-4 text-center">
             <div className="flex items-center justify-between pb-2 border-b border-[#eaedff]">
               <span className="text-xs font-bold text-[#131b2e] uppercase tracking-wider">
                 Event Registration QR
@@ -63,8 +63,8 @@ export const Modals: React.FC<ModalsProps> = ({
               </button>
             </div>
 
-            <div className="p-4 bg-[#f2f3ff] rounded-xl flex items-center justify-center">
-              <svg className="w-48 h-48 text-[#131b2e]" fill="currentColor" viewBox="0 0 200 200">
+            <div className="p-3 sm:p-4 bg-[#f2f3ff] rounded-xl flex items-center justify-center">
+              <svg className="w-40 h-40 sm:w-48 sm:h-48 text-[#131b2e]" fill="currentColor" viewBox="0 0 200 200">
                 <rect x="15" y="15" width="50" height="50" rx="6" stroke="currentColor" strokeWidth="10" fill="none" />
                 <rect x="29" y="29" width="22" height="22" rx="3" />
                 <rect x="135" y="15" width="50" height="50" rx="6" stroke="currentColor" strokeWidth="10" fill="none" />
@@ -112,8 +112,8 @@ export const Modals: React.FC<ModalsProps> = ({
 
       {/* Booking Confirmed Modal */}
       {bookingSuccessTier && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-[#c7c4d8]/40 space-y-5 text-center relative overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs">
+          <div className="bg-white rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl border border-[#c7c4d8]/40 space-y-4 sm:space-y-5 text-center relative overflow-hidden">
             {/* Top festive header */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#3525cd] via-[#00687a] to-[#885500]"></div>
 
