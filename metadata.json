@@ -1,0 +1,6 @@
+{
+  "name": "LinkVibe - LinkedIn Event & Pass Studio",
+  "description": "High-conversion LinkedIn event studio, smart attendee digital pass generator, and viral post builder.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
